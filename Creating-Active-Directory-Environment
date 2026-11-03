@@ -1,1 +1,116 @@
+Creating Active Directory Environment
+Objective
+To build a Windows Server Active Directory environment capable of managing users, departments, and permissions in a simulated business environment.
 
+
+
+Step 1 - Install Oracle VirtualBox
+Installed Oracle VirtualBox to host virtual machines.
+
+________________________________________________
+
+Step 2 - Create Windows Server Virtual Machine
+Created a virtual machine named:
+
+DC02
+
+Configuration:
+
+4 GB RAM
+2 Virtual CPUs
+60 GB Storage
+
+________________________________________________
+
+Step 3 - Install Windows Server 2025
+Installed:
+
+Windows Server 2025 Standard Evaluation (Desktop Experience)
+
+________________________________________________
+
+Step 4 - Configure Active Directory Domain Services
+Installed the Active Directory Domain Services role using Server Manager.
+
+Role installed:
+
+Active Directory Domain Services
+Supporting services:
+
+_______________________________________________
+
+DNS Server
+Step 5 - Promote Server to Domain Controller
+Promoted the server to a Domain Controller.
+
+Created a new forest:
+
+drl.local
+
+________________________________________________
+
+Step 6 - Create Organizational Units
+Created the following Organizational Units:
+
+Management
+HR
+Finance
+Sales
+Warehouse
+IT
+
+________________________________________________
+
+Step 7 - Create User Accounts
+Created the following domain users:
+
+mary.manager
+john.hr
+anna.finance
+mark.sales
+derick.admin
+
+________________________________________________
+
+Step 8 - Create Security Groups
+Created security groups within each department:
+
+Management_Group
+HR_Group
+Finance_Group
+Sales_Group
+Warehouse_Group
+IT_Admins
+
+________________________________________________
+
+Step 9 - Assign Users To Groups
+- Assigned users to their corresponding security groups.
+
+Example:
+
+anna.finance → Finance_Group
+
+john.hr → HR_Group
+
+derick.admin → IT_Admins
+
+________________________________________________
+
+Skills Learned
+Active Directory Administration
+Domain Controller Deployment
+User Management
+Group Management
+Organizational Unit Management
+Windows Server Administration
+Virtual Machine Deployment
+
+________________________________________________
+
+Future Improvements
+Create Windows 11 Client Machine
+Join Client Machine To Domain
+Configure Group Policies
+Implement Shared Folders
+Configure User Permissions
