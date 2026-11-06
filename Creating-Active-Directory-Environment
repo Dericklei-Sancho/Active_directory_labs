@@ -1,57 +1,55 @@
-Creating Active Directory Environment
+Creating an Active Directory Environment
 Objective
-To build a Windows Server Active Directory environment capable of managing users, departments, and permissions in a simulated business environment.
+To design and deploy a Windows Server Active Directory environment capable of managing users, security groups, permissions, policies, and client authentication in a simulated business network.
 
-
-
-Step 1 - Install Oracle VirtualBox
-Installed Oracle VirtualBox to host virtual machines.
-
-________________________________________________
-
-Step 2 - Create Windows Server Virtual Machine
-Created a virtual machine named:
+Environment
+Domain Controller
 
 DC02
+Operating System: Windows Server 2025 Standard Evaluation
+
+Client Machine: CLIENT02
+
+Operating System: Windows 11 Pro
+
+Domain: dericklab.local
+
+Phase 1 - Server Deployment
+
+Step 1
+Installed Oracle VirtualBox.
+
+Step 2
+Created domain controller virtual machine: DC02
 
 Configuration:
-
 4 GB RAM
-2 Virtual CPUs
+2 CPUs
 60 GB Storage
 
-________________________________________________
+Step 3
+Installed Windows Server 2025.
 
-Step 3 - Install Windows Server 2025
-Installed:
 
-Windows Server 2025 Standard Evaluation (Desktop Experience)
 
-________________________________________________
 
-Step 4 - Configure Active Directory Domain Services
-Installed the Active Directory Domain Services role using Server Manager.
+Phase 2 - Active Directory
 
-Role installed:
+Step 4
+Installed Active Directory Domain Services.
+Installed supporting DNS services.
 
-Active Directory Domain Services
-Supporting services:
-
-_______________________________________________
-
-DNS Server
-Step 5 - Promote Server to Domain Controller
+Step 5
 Promoted the server to a Domain Controller.
 
-Created a new forest:
+Created domain: dericklab.local
 
-drl.local
 
-________________________________________________
 
-Step 6 - Create Organizational Units
-Created the following Organizational Units:
+Phase 3 - Organizational Structure
 
+Step 6
+Created Organizational Units:
 Management
 HR
 Finance
@@ -59,22 +57,16 @@ Sales
 Warehouse
 IT
 
-________________________________________________
-
-Step 7 - Create User Accounts
-Created the following domain users:
-
+Step 7
+Created user accounts:
 mary.manager
 john.hr
 anna.finance
 mark.sales
 derick.admin
 
-________________________________________________
-
-Step 8 - Create Security Groups
-Created security groups within each department:
-
+Step 8
+Created security groups:
 Management_Group
 HR_Group
 Finance_Group
@@ -82,35 +74,74 @@ Sales_Group
 Warehouse_Group
 IT_Admins
 
-________________________________________________
-
-Step 9 - Assign Users To Groups
-- Assigned users to their corresponding security groups.
+Step 9
+Assigned users to corresponding groups.
 
 Example:
-
 anna.finance → Finance_Group
-
 john.hr → HR_Group
 
-derick.admin → IT_Admins
 
-________________________________________________
+Phase 4 - Client Deployment
 
-Skills Learned
-Active Directory Administration
-Domain Controller Deployment
-User Management
-Group Management
-Organizational Unit Management
-Windows Server Administration
-Virtual Machine Deployment
+Step 10
+Created Windows 11 virtual machine: CLIENT02
 
-________________________________________________
+Configuration:
+Windows 11 Pro
+4 GB RAM
+2 CPUs
+60 GB Storage
+Step 11
+Configured networking between CLIENT02 and DC02.
 
-Future Improvements
-Create Windows 11 Client Machine
-Join Client Machine To Domain
-Configure Group Policies
-Implement Shared Folders
-Configure User Permissions
+Step 12
+Joined CLIENT02 to: dericklab.local
+
+Step 13
+Authenticated users through Active Directory.
+
+Successful logins:
+anna.finance
+john.hr
+
+
+Phase 5 - File Permissions
+
+Step 14
+Created shared folders.
+
+Assigned permissions using security groups.
+
+Validated access control through user accounts.
+
+Phase 6 - Group Policy
+
+Step 15
+Created and applied Group Policy Objects.
+
+Verified successful policy deployment to domain users.
+
+Challenges Encountered
+Virtual Machine Boot Issues
+Black screen during installation
+ISO boot configuration problems
+Networking
+DNS resolution issues
+Client-to-domain communication problems
+Active Directory
+Domain join troubleshooting
+User authentication troubleshooting
+Lessons Learned
+Active Directory Domain Services
+Group Policy Management
+DNS Fundamentals
+User and Group Management
+Windows Client Administration
+Permission Management
+Troubleshooting Methodology
+Virtual Machine Administration
+
+
+Conclusion
+Successfully deployed and administered a Windows Server Active Directory environment with enterprise-style user management, authentication, access control, Group Policies, and Windows client integration.
